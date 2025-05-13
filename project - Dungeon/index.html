@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Code Dungeon</title>
+  <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🧙‍♂️ Welcome to the Code Dungeon</h1>
+    <div id="player-stats">
+      <span>❤️ HP: 3</span>
+      <span>⚔️ XP: 0</span>
+      <span>🎖️ Level: 1</span>
+    </div>
+  </header>
+ 
+  <div id="start-screen">
+    <button id="start-button">🚀 Begin Your Quest</button>
+  </div>
+ 
+  <main id="game-content" style="display: none;">
+    <section id="dungeon-map">
+      <div class="tile player">🧙</div>
+      <div class="tile challenge">❓</div>
+      <div class="tile trap">💀</div>
+      <div class="tile treasure">💎</div>
+      <div class="tile empty">🌑</div>
+    </section>
+
+    
+
+    <section id="challenge-box" class="hidden">
+      <h2>Challenge</h2>
+      <p><strong>Task:</strong> Write a function that adds two numbers.</p>
+      <textarea rows="5" placeholder="function add(a, b) { return a + b; }"></textarea>
+      <button>Submit Code</button>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Code Dungeon</p>
+  </footer>
+
+ 
+  <script>
+    const startBtn = document.getElementById("start-button");
+    const startScreen = document.getElementById("start-screen");
+    const gameContent = document.getElementById("game-content");
+    const challengeBox = document.getElementById("challenge-box");
+
+    startBtn.addEventListener("click", () => {
+      startScreen.style.display = "none";
+      gameContent.style.display = "block";
+      challengeBox.classList.remove("hidden");
+      challengeBox.classList.add("sci-fi-reveal");
+    });
+  </script>
+</body>
+</html>
